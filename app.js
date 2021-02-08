@@ -15,9 +15,6 @@ const displaySongs = songs => {
             <div class="col-md-9">
                 <h3 class="lyrics-name">${song.title}</h3>
                 <p class="author lead">Album by <span>${song.artist.name}</span></p>
-                <audio controls>
-                    <source src="${song.preview}" type="audio/mpeg"/>
-                </audio>
             </div>
             <div class="col-md-3 text-md-right text-center">
                 <button onclick="getLyrics('${song.artist.name}', '${song.title}')" class="btn btn-success">Get Lyrics</button>
@@ -34,7 +31,6 @@ const getLyrics = async (artist, title) => {
 }
 
 const displayLyrics = lyrics => {
-    console.log(lyrics);
     const lyricsDiv = document.getElementById('lyrics');
     lyricsDiv.innerText = lyrics;
 }
